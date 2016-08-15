@@ -1,0 +1,1 @@
+项目在myeclipse中运行正常，用Maven命令编译项目，报错，找不到ApplicationContext配置文件。在Myeclipse中再次运行，出现同样的错误。
