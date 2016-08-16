@@ -69,30 +69,26 @@ public class CustomerService {
 			customer.setCreate_date(format.format(now));
 			customer.setLast_update(format.format(now));
 			
-			
-			
-			
     		CustomerInter customerMapper =  (CustomerInter) ctx.getBean("customerMapper");
     		customerMapper.addCustomer(customer);
 
-			
-			
-//			SqlSession session = sqlSessionFactory.openSession();
-//			try {
-//			IUserOperation userOperation=session.getMapper(IUserOperation.class);
-//			userOperation.addUser(user);
-//			session.commit();
-//			System.out.println("当前增加的用户 id为:"+user.getId());
-//			} finally {
-//			session.close();
-//			}
-//			}
-			
-			
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return bool;
 	}
+
+	public Customer getCustomer(){
+		Customer customer = new Customer();
+		try {
+    		CustomerInter customerMapper =  (CustomerInter) ctx.getBean("customerMapper");
+    		customer = customerMapper.getCustomer();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return customer;
+	}
+
 }

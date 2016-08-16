@@ -5,7 +5,10 @@
 
 <mapper namespace="com.hand.serviceInter.CustomerInter">
 
-
+	<select id="getCustomer" resultType="Customer">
+		select * from customer where customer_id = (select max(customer_id) from customer);
+	</select>
+	
 	<insert id="addCustomer" parameterType="Customer" useGeneratedKeys="true" keyProperty="customer_id">
 		insert into customer(store_id,first_name,last_name,email,address_id,active,create_date,last_update) values
 			( #{store_id},#{first_name},#{last_name},#{email},#{address_id},#{active},#{create_date},#{last_update})
