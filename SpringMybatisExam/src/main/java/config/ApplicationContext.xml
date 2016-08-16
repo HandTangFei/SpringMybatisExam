@@ -45,5 +45,11 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	</bean>
 
 
+	<bean id="customerMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+		<property name="mapperInterface" value="com.hand.serviceInter.CustomerInter" />
+	</bean>
+
+
 
 </beans>

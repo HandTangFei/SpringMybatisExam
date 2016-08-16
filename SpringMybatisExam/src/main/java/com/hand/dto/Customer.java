@@ -1,6 +1,7 @@
 package com.hand.dto;
 
-import java.sql.Date;
+
+
 
 public class Customer {
 	private int customer_id;
@@ -10,8 +11,8 @@ public class Customer {
 	private String email;
 	private int address_id;
 	private int active;
-	private Date create_date;
-	private Date last_update;
+	private String create_date;
+	private String last_update;
 	/**
 	 * @return the customer_id
 	 */
@@ -99,26 +100,27 @@ public class Customer {
 	/**
 	 * @return the create_date
 	 */
-	public Date getCreate_date() {
+	public String getCreate_date() {
 		return create_date;
 	}
 	/**
 	 * @param create_date the create_date to set
 	 */
-	public void setCreate_date(Date create_date) {
+	public void setCreate_date(String create_date) {
 		this.create_date = create_date;
 	}
 	/**
 	 * @return the last_update
 	 */
-	public Date getLast_update() {
+	public String getLast_update() {
 		return last_update;
 	}
 	/**
 	 * @param last_update the last_update to set
 	 */
-	public void setLast_update(Date last_update) {
+	public void setLast_update(String last_update) {
 		this.last_update = last_update;
 	}
+	
 	
 }
